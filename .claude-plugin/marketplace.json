@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "agent-runbook-authoring",
-      "description": "Write runbooks: SKILL.md procedures a main session executes step by step through subagents, with transitions computed by a small Python engine",
+      "description": "Writes runbooks: procedures an agent session runs through subagents. The steps are prompt files, the transitions are a few lines of Python on a small engine, and the orchestrator never reasons about what comes next.",
       "source": "./",
       "strict": false,
       "skills": ["./skills/agent-runbook-authoring"]
