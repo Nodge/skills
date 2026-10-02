@@ -1,6 +1,6 @@
 ---
 name: consensus
-description: Think a question through together with a second model — both form positions independently, then reconcile them round by round until they agree or the crux is clear.
+description: "Think a question through together with a second model: both form positions independently, then reconcile them round by round until they agree or the crux is clear."
 argument-hint: "<model> [--rounds N] <question>"
 disable-model-invocation: true
 ---
