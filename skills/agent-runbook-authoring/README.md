@@ -23,6 +23,10 @@ A finished runbook is self-sufficient: it runs where this skill is not installed
 
 TODO: runs, end statuses, orchestrator deviations per run.
 
+## Mixing models
+
+Runbooks pair well with [throng](https://github.com/Nodge/throng-mcp), an MCP server that runs Claude Code, Codex or OpenCode as subagents of each other. Any step of a runbook can go to any harness and model: a Codex coder, an OpenCode model as a cheap checker, a reviewer from another vendor that catches what the first one missed. [`examples/runbook-task-cycle`](../../examples/runbook-task-cycle) shows the one-line change.
+
 ## Limits
 
 - The orchestrating session must be able to launch subagents and learn when they finish.
