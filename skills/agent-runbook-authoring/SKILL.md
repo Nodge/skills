@@ -1,6 +1,6 @@
 ---
 name: agent-runbook-authoring
-description: Design, write, or review a runbook: a SKILL.md procedure that a main session executes step by step through subagents, coordinating through files. Use when asked to write a runbook, to turn a workflow script or a repeated multi-agent procedure into one, or to check an existing runbook or the progress.md of one of its runs.
+description: "Design, write, or review a runbook: a SKILL.md procedure that a main session executes step by step through subagents, coordinating through files. Use when asked to write a runbook, to turn a workflow script or a repeated multi-agent procedure into one, or to check an existing runbook or the progress.md of one of its runs."
 ---
 
 # Agent runbooks
