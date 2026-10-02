@@ -1,0 +1,13 @@
+# Changelog
+
+Versions of `references/runbook.py`. A major version changes the `flow.py` API and says what to change in an existing `flow.py`. Each release is tagged `agent-runbook-authoring/v<version>`.
+
+## 1.0.0
+
+First public release.
+
+- `rb.inputs`, `rb.executor`, `rb.start`, `rb.step`, `rb.human`; targets `end(...)` and `parallel(...)`.
+- `skip` on a step, `s.done(step)` and `s.reply(step)` in conditions.
+- Step outputs are numbered by launch, `<run>/<NN>-<name>`: `writes` and `reads` name the files, and the launch message gives the paths. `<run>/<name>` in an `end` report or a question becomes the latest such file.
+- A `done` reply is checked against the step's `reply` fields: a missing field or a wrong type records it as `failed`.
+- Commands `start`, `reply`, `answer`, `interrupted`, `relaunch`, `log`, status, `--check`.

@@ -1,0 +1,18 @@
+{
+  "name": "nodge-skills",
+  "owner": {
+    "name": "Maksim Zemskov"
+  },
+  "metadata": {
+    "description": "Agent skills by Nodge"
+  },
+  "plugins": [
+    {
+      "name": "agent-runbook-authoring",
+      "description": "Write runbooks: SKILL.md procedures a main session executes step by step through subagents, with transitions computed by a small Python engine",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/agent-runbook-authoring"]
+    }
+  ]
+}

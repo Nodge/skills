@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  runbook-engine:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest test_runbook -v
+        working-directory: skills/agent-runbook-authoring/references
+      - name: The example runbook is consistent and carries the current engine
+        if: matrix.python == '3.13'
+        run: |
+          cmp skills/agent-runbook-authoring/references/runbook.py examples/runbook-task-cycle/runbook.py
+          cd examples/runbook-task-cycle && python flow.py --check
