@@ -1,5 +1,7 @@
 # Skills
 
+[![skills.sh](https://skills.sh/b/nodge/skills)](https://skills.sh/nodge/skills/agent-runbook-authoring)
+
 Agent skills I use in my daily work, in the [Agent Skills](https://agentskills.io) format: a directory with a `SKILL.md`. They work in Claude Code, Codex CLI, opencode and any other harness that loads skills.
 
 | Skill | What it does |
