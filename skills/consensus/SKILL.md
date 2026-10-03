@@ -13,7 +13,7 @@ You are participant **A**. The second model, **B**, is one thronglet session tha
 
 ## Inputs
 
-From `$ARGUMENTS`: the first word names B's model, as a throng agent spec `<harness>/<model>[:<effort>]` (`codex/gpt-6-sol`, `claude/opus[1m]:max`) or as a code word your instructions map to one. No effort given: `:high`. A word you cannot resolve: ask, do not guess. `--rounds N`, anywhere, sets the budget; default 10, round 1 included. The rest is the question, verbatim.
+From `$ARGUMENTS`: the first word names B's model, as a throng agent spec `<harness>/<model>[:<effort>]` (`codex/gpt-6-sol`, `claude/opus:max`) or as a code word your instructions map to one. No effort given: `:high`. A word you cannot resolve: ask, do not guess. `--rounds N`, anywhere, sets the budget; default 10, round 1 included. The rest is the question, verbatim.
 
 B always runs through throng, whatever its vendor, even the one that runs you. B on your own model shares your blind spots: say so in one line and proceed.
 
