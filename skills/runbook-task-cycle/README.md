@@ -1,8 +1,8 @@
 # runbook-task-cycle
 
-A [runbook](../agent-runbook-authoring) for one coding task in a repository, from brief to reviewed, uncommitted changes. A coder implements the brief, a cheap model runs the checks, two different models review independently, an arbiter triages their findings against the code, the coder fixes what is worth fixing, a verifier checks the fixes, and a last pass cleans up comments and wording. The human is asked only when nothing names the checks, when the repository is dirty at the start, or when the fix rounds run out. Commit, PR and CI stay outside.
+A [runbook](https://github.com/agent-runbooks/skills) for one coding task in a repository, from brief to reviewed, uncommitted changes. A coder implements the brief, a cheap model runs the checks, two different models review independently, an arbiter triages their findings against the code, the coder fixes what is worth fixing, a verifier checks the fixes, and a last pass cleans up comments and wording. The human is asked only when nothing names the checks, when the repository is dirty at the start, or when the fix rounds run out. Commit, PR and CI stay outside.
 
-Every step is a thronglet: [throng](https://github.com/Nodge/throng-mcp) is an MCP server that runs Claude Code, Codex or OpenCode as a subagent of any of them and returns the agent's final message, which is the shape a runbook step already has. The session that runs this runbook needs it.
+Every step is a thronglet: [throng](https://github.com/agent-runbooks/throng-mcp) is an MCP server that runs Claude Code, Codex or OpenCode as a subagent of any of them and returns the agent's final message, which is the shape a runbook step already has. The session that runs this runbook needs it.
 
 ```
 SKILL.md        what the orchestrator reads: inputs, execution rules, end of run
@@ -26,13 +26,7 @@ Each is an input of the run, so a project changes them in its profile and the hu
 
 ## Try it
 
-Install the skill, see [the repository README](../../README.md), then make a repository from the fixture in [`examples/textkit`](../../examples/textkit):
-
-```bash
-cp -r examples/textkit /tmp/textkit && cd /tmp/textkit && git init -q && git add -A && git commit -qm init
-```
-
-Start a session in `/tmp/textkit` and ask: "Run runbook-task-cycle: add an optional `max_length` to `slugify`, cut on a word boundary; checks `python3 -m unittest`." [`examples/runs`](../../examples/runs) has the files of such a run.
+Install the skill, see [the repository README](../../README.md). Then start a session in a repository and ask, with your own task and checks command: "Run runbook-task-cycle: add an optional `max_length` to `slugify`, cut on a word boundary; checks `python3 -m unittest`."
 
 ## The profile
 
@@ -68,4 +62,4 @@ What each section is for:
 - **Rules**: the project rules that matter in a task cycle, for the coder and the reviewers' third axis. A digest, since the executors read the instructions file anyway: the rules that are broken often, or that the file states too far down to be noticed.
 - **Executors**: the agent of the executors to change, one per line.
 
-The profile is prose read by models, so anything the steps need to know about the project goes there in the words you would use for a new colleague. When the profile is not enough, because the project needs another step or another graph, copy the skill into the project's skills directory under another name and edit `flow.py` and the prompts. From then on it is yours: the engine upgrade procedure is in [agent-runbook-authoring](../agent-runbook-authoring/SKILL.md).
+The profile is prose read by models, so anything the steps need to know about the project goes there in the words you would use for a new colleague. When the profile is not enough, because the project needs another step or another graph, copy the skill into the project's skills directory under another name and edit `flow.py` and the prompts. From then on it is yours: the engine upgrade procedure is in [agent-runbook-authoring](https://github.com/agent-runbooks/skills/blob/main/skills/agent-runbook-authoring/SKILL.md).

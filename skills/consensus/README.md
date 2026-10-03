@@ -10,7 +10,7 @@ Ask a second model for its opinion and you get a second monologue. Paste it back
 
 Both participants answer the question **independently** first: the second model gets the question and the context, and nothing of the session's own position. Then they exchange messages under one set of rules, [`references/rules.md`](references/rules.md): a position, a reply to every open point with what convinced you or what you checked, new ground only when it can change the answer, and a status with the lists of what is agreed and what is open. Agreement has to state what convinced; conceding to be done keeps the point open. The exchange ends when two consecutive messages say CONVERGED, or when the round budget runs out, and the report to the user is the agreed list, the contested points and what settled them, and whatever stayed open, which is the user's call.
 
-The second model is one [throng](https://github.com/Nodge/throng-mcp) session that keeps its memory across the rounds; its status comes back as structured fields, so the stop condition is a comparison, not a reading of prose.
+The second model is one [throng](https://github.com/agent-runbooks/throng-mcp) session that keeps its memory across the rounds; its status comes back as structured fields, so the stop condition is a comparison, not a reading of prose.
 
 ## Usage
 

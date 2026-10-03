@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 # consensus
 
-Needs the [throng](https://github.com/Nodge/throng-mcp) MCP server: B lives in a thronglet.
+Needs the [throng](https://github.com/agent-runbooks/throng-mcp) MCP server: B lives in a thronglet.
 
 You are participant **A**. The second model, **B**, is one thronglet session that keeps its own context across the whole consultation: `run_thronglet` opens it, `send_message` carries every later message into it. Your messages to B are the prompts; B's replies are its messages, with the status as structured fields. You follow the same rules as B: [`references/rules.md`](references/rules.md) goes to B in the opening prompt and binds both of you.
 
